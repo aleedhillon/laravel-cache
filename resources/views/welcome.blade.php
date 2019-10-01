@@ -120,7 +120,7 @@
                     @endforeach
                 </ol>
             @else
-                <p>No Users yet.</p>
+                <p>No Users.</p>
             @endif
         </div>
     </body>
