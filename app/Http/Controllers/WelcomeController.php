@@ -20,8 +20,8 @@ class WelcomeController extends Controller
         // $key = Users::getCacheKey('all.id');
         // $users = Users::all();
         $users = User::all();
-        return response()->json($users, 200);
+        // return response()->json($users, 200);
 
-        // return view('welcome')->with('users', $users);
+        return view('welcome')->with('users', $users);
     }
 }
