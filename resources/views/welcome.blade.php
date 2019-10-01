@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Laravel Cache</title>
 
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
@@ -96,7 +96,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Cache
                 </div>
 
                 <div class="links">
