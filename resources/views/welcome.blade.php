@@ -61,10 +61,23 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .red {
+                color: red;
+            }
+            .blue {
+                color: blue;
+            }
+            .center {
+                text-align: center;
+            }
+            #inner {
+                display: table;
+                margin: 0 auto;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -95,6 +108,17 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+        </div>
+        <div id="inner">
+            @if ($users->isNotEmpty())
+                <ol>
+                    @foreach ($users as $user)
+                        <li><span class="red">{{ $user->name }}</span> => <span class="blue">{{ $user->email }}</span> </li>
+                    @endforeach
+                </ol>
+            @else
+                <p>No Users yet.</p>
+            @endif
         </div>
     </body>
 </html>

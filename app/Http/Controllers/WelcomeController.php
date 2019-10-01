@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class WelcomeController extends Controller
 {
@@ -14,6 +16,7 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('welcome');
+        $users = User::all();
+        return view('welcome')->with('users', $users);
     }
 }
