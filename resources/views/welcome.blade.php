@@ -111,6 +111,7 @@
         </div>
         <div id="inner">
             @if ($users->isNotEmpty())
+                <p class="center">Total Number of Users: <strong class="red">{{ $users->count() }}</strong></p>
                 <ol>
                     @foreach ($users as $user)
                         <li><span class="red">{{ $user->name }}</span> => <span class="blue">{{ $user->email }}</span> </li>
