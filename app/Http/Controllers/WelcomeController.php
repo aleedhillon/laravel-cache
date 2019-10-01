@@ -18,7 +18,10 @@ class WelcomeController extends Controller
     public function __invoke(Request $request)
     {
         // $key = Users::getCacheKey('all.id');
-        $users = Users::all();
-        return view('welcome')->with('users', $users);
+        // $users = Users::all();
+        $users = User::all();
+        return response()->json($users, 200);
+
+        // return view('welcome')->with('users', $users);
     }
 }
