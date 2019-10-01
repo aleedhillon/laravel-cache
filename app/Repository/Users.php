@@ -17,7 +17,6 @@ class Users {
         return Cache::remember($cacheKey, now()->addMinute(60), function () use($orderBy) {
             return User::orderBy($orderBy)->get();
         });
-        // return User::orderBy($orderBy)->get();
     }
 
     public function get($id)
@@ -25,9 +24,6 @@ class Users {
         $key = "get.{$id}";
         $cacheKey = $this->getCacheKey($key);
 
-        // dd(Cache::remember($cacheKey, now()->addMinute(30), function () use ($id) {
-        //     return User::find($id);
-        // }));
         return Cache::remember($cacheKey, now()->addMinute(30), function () use($id) {
             return User::find($id);
         });

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Facades\App\Repository\Users;
 use Illuminate\Http\Request;
+use Facades\App\Repository\Users;
+use Illuminate\Support\Facades\Cache;
 
 class WelcomeController extends Controller
 {
@@ -16,6 +17,7 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request)
     {
+        // $key = Users::getCacheKey('all.id');
         $users = Users::all();
         return view('welcome')->with('users', $users);
     }
